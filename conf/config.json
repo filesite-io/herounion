@@ -1,0 +1,30 @@
+{
+    "name": "Hero Union",
+    "version": "0.1",
+
+    "task_data_max_size": 1024,
+    "task_cache_time": 86400,
+
+    "heroHeartTimeout": 600,
+    "notify_timeout": 8,
+    "notify_max_try": 5,
+
+    "task_timeout": 600,
+    "task_max_try": 5,
+
+    "reloadConfigFrequence": 1,
+    "heroHeartCheckFrequence": 1,
+    "autoCleanTaskFrequence": 5,
+    "autoNotifyTaskFrequence": 1,
+    "autoResetWaitingTaskFrequence": 6,
+
+    "max_list_hero_num": 1000,
+
+    "axios_proxy": false,
+
+    "systemLogDir": "log/",
+
+    "tokens": {
+        "herounion_demo": "hello#world!"
+    }
+}

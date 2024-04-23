@@ -1,0 +1,218 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>HeroUnion英雄联盟 - 开源的Hero爬虫联盟</title>
+    <meta name="author" content="filesite.io">
+    <meta name="description" content="HeroUnion: A union of hero bots, 开源的Hero爬虫联盟。">
+    <style>
+        *,body{margin:0;padding:0}
+        body{padding:8px;max-width:640px;margin:0 auto}
+        h1{font-size:2em;font-weight:500}
+        small{font-size:65%;font-weight:400}
+        pre{background-color:#DDD;padding-bottom:3px;padding-right:3px;border-radius:0 5px 0 5px;max-width:480px}
+        code{display:block;background-color:#EEE;padding:4px}
+        dt{background-color:#EEE;padding:4px 6px}
+        dd{text-indent:1em;margin:4px 0 8px 0}
+
+        .text-center{text-align:center}
+        .mt-d5{margin-top:0.5em}
+        .mt-1{margin-top:1em}
+        .mt-4{margin-top:4em}
+
+        .stats{background-color:#EEE;padding:10px 10px 4px 10px}
+        .col{display:inline-block;padding:13px 4px;width:20%;background:#444;color:#FFF;margin-right:4px;margin-bottom:6px;text-align:center}
+        .col strong{font-size:24px}
+        .col label{display:block;font-size:15px}
+        .info{background-color:darkblue}
+        .success{background-color:green}
+        .warning{background-color:orange;color:#444}
+        .danger{background-color:red}
+        .disable{background-color:gray}
+
+        @media(max-width:480px) {
+            h1 small{display:block}
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">HeroUnion英雄联盟<small> - 开源的Hero爬虫联盟</small></h1>
+
+    <hr class="mt-d5">
+
+    <h3 class="mt-1">HeroUnion源码下载</h3>
+    <p><a href="https://git.filesite.io/filesite/hero_union" target="_blank">https://git.filesite.io/filesite/hero_union</a></p>
+
+    <h3 class="mt-1">HeroBot - Machete Hero源码下载</h3>
+    <p><a href="https://git.filesite.io/filesite/machete_hero" target="_blank">https://git.filesite.io/filesite/machete_hero</a></p>
+
+    <h3 class="mt-1">HeroUnion联盟状态 - 已运行<span class="run_time">...</span></h3>
+    <h4 class="mt-d5">任务状态（最近<span class="cache_time">...</span>）</h4>
+    <div class="stats taskStatus">
+        <span class="col">
+            <strong class="total">...</strong>
+            <label>总数</label>
+        </span>
+        <span class="col info">
+            <strong class="waiting">...</strong>
+            <label>等待中</label>
+        </span>
+        <span class="col warning">
+            <strong class="running">...</strong>
+            <label>执行中</label>
+        </span>
+        <span class="col success">
+            <strong class="done">...</strong>
+            <label>完成</label>
+        </span>
+        <span class="col danger">
+            <strong class="failed">...</strong>
+            <label>失败</label>
+        </span>
+    </div>
+
+    <h4 class="mt-d5">任务通知状态（最近<span class="cache_time">...</span>）</h4>
+    <div class="stats taskNotifyStatus">
+        <span class="col">
+            <strong class="total">...</strong>
+            <label>总数</label>
+        </span>
+        <span class="col success">
+            <strong class="done">...</strong>
+            <label>完成</label>
+        </span>
+        <span class="col danger">
+            <strong class="failed">...</strong>
+            <label>失败</label>
+        </span>
+    </div>
+
+    <h4 class="mt-d5">爬虫状态</h4>
+    <div class="stats heroStatus">
+        <span class="col">
+            <strong class="total">...</strong>
+            <label>总数</label>
+        </span>
+        <span class="col success">
+            <strong class="idle">...</strong>
+            <label>空闲</label>
+        </span>
+        <span class="col warning">
+            <strong class="busy">...</strong>
+            <label>繁忙</label>
+        </span>
+        <span class="col disable">
+            <strong class="offline">...</strong>
+            <label>离线</label>
+        </span>
+    </div>
+
+    <h4 class="mt-d5">JSON数据</h4>
+    <pre><code id="herounion_stats">...</code></pre>
+
+    <h3 class="mt-1">爬虫列表</h3>
+    <dl class="mt-d5" id="herobots">
+        <!--
+        <dt>爬虫 1 <small>空闲</small></dt>
+        <dd>
+            Machete的Hero爬虫
+            - https://tajian.tv
+        </dd>
+        -->
+    </dl>
+
+
+    <footer class="mt-4 text-center">
+        &copy;copyright <a href="https://filesite.io" target="_blank">FileSite.io</a>
+    </footer>
+
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        var formatSeconds = function(secs) {
+            var str = secs + '秒';
+            if (secs > 86400) {
+                str = Math.floor(secs/86400) + '天';
+            }else if (secs > 3600) {
+                str = Math.floor(secs/3600) + '小时';
+            }else if (secs > 300) {
+                str = Math.floor(secs/60) + '分钟';
+            }else if (secs > 86400*365) {
+                str = Math.floor(secs/86400/365) + '年'
+                        + Math.floor( (secs - Math.floor(secs/86400/365)) / 86400 ) + '天';
+            }
+
+            return str;
+        };
+
+        var renderStats = function(parentCls, data) {
+            for (var key in data) {
+                $('.' + parentCls + ' .'+key).text(data[key]);
+            }
+        };
+
+        var htmlspecialchars = function(str) {
+            return str.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
+        };
+
+        var renderHeros = function(heros) {
+            if (!heros || heros.length == 0) {
+                $('#herobots').text('暂无爬虫加入联盟。');
+                return;
+            }
+
+            var txtStatus = {idle: '空闲', busy: '繁忙', offline: '离线'};
+            var html = '', item;
+            for (var index in heros) {
+                item = heros[index];
+                html += '<dt>' + htmlspecialchars(item['name']) + ' <small>'
+                        + txtStatus[item['status']] + '</small></dt>';
+                html += '<dd>'
+                        + htmlspecialchars(item['description'])
+                        + '<br>支持平台：' + JSON.stringify(item['platforms'])
+                        + '，支持合约：' + JSON.stringify(item['contracts'])
+                        + '，联系方式：' + htmlspecialchars(item['contact'])
+                        + '</dd>';
+            }
+
+            $('#herobots').html(html);
+        };
+
+        var loadUnionStats = function() {
+            $('.run_time').text('...');
+            var api = '/api/stats/';
+            $.ajax({
+                url: api,
+                method: 'GET',
+                dataType: 'json'
+            }).done(function(data) {
+                $('#herounion_stats').text(JSON.stringify(data, null, 4));
+                $('.run_time').text( formatSeconds(data.run_seconds) );
+                $('.cache_time').text( formatSeconds(data.cache_time) );
+                renderStats('taskStatus', data.taskStatus);
+                renderStats('taskNotifyStatus', data.taskNotifyStatus);
+                renderStats('heroStatus', data.heroStatus);
+            });
+        };
+
+        var loadHeros = function() {
+            $('#herobots').text('...');
+            var api = '/api/heros/';
+            $.ajax({
+                url: api,
+                method: 'GET',
+                dataType: 'json'
+            }).done(function(data) {
+                renderHeros(data);
+            });
+        };
+
+        //init
+        loadUnionStats();
+        loadHeros();
+
+        setInterval(loadUnionStats, 20000);
+    </script>
+</body>
+</html>
