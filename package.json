@@ -1,5 +1,5 @@
 {
-    "name": "herounion",
+    "name": "@filesite/herounion",
     "description": "A hero bot union, which can manage hero bots and their tasks.",
     "version": "0.0.1",
     "author": "filesite.io",

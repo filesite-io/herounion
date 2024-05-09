@@ -22,9 +22,6 @@ app.use(bodyParser.json({ limit: '2mb' }))
 
 app.use('/api', apiRouter);
 
-//开启静态文件支持
-app.use(express.static('public'));
-
 /*
 app.get('/', (req, res) => {
     return res.send('Welcome to Hero Union of filesite.io');
@@ -54,7 +51,7 @@ app.use((err, req, res, next) => {
 
 // Listen to the App Engine-specified port, or 8080 otherwise
 const PORT = process.env.PORT || 8080;
-const HOST = '127.0.0.1';
+const HOST = process.env.HOST || '127.0.0.1';
 app.listen(PORT, HOST, async () => {
-    console.log('Server listening on port %s...', PORT);
+    console.log('Server listening on port %s:%s...', HOST, PORT);
 });
