@@ -1,6 +1,6 @@
 # HeroUnion - 英雄联盟
 
-Union of hero bots，一个Hero的爬虫联盟。
+Open source web crawler union，一个开源的网络爬虫联盟。
 
 HeroUnion主要做两件事：
 
