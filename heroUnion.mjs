@@ -469,12 +469,21 @@ class HeroUnion {
                     (item.status == 'done' || item.status == 'failed')
                     && timestamp - item.created > _self.task_cache_time
                 ) {
-                    _self.taskStatus[item.status] --;
-                    _self.taskStatus.total --;
+                    if (_self.taskStatus[item.status] >= 1) {
+                        _self.taskStatus[item.status] --;
+                    }
+                    if (_self.taskStatus.total >= 1) {
+                        _self.taskStatus.total --;
+                    }
 
                     let notify_status = item.notified ? 'done' : 'failed';
-                    _self.taskNotifyStatus[notify_status] --;
-                    _self.taskNotifyStatus.total --;
+                    if (_self.taskNotifyStatus[notify_status] >= 1) {
+                        _self.taskNotifyStatus[notify_status] --;
+                    }
+                    if (_self.taskNotifyStatus.total >= 1) {
+                        _self.taskNotifyStatus.total --;
+                    }
+
                     common.log('Task %s is expired, which is created at %s', item.id, item.created);
                 }else {
                     accumulator.push(item);
@@ -512,14 +521,14 @@ class HeroUnion {
                     _self.taskStatus.running --;
                     _self.taskStatus.waiting ++;
                     _self.tasks[index].status = 'waiting';
-                    common.log('Task %s running timeout, and reset it to waiting list', item.id);
+                    common.log('Task %s running timeout, and reset it to waiting list, url: %s', item.id, item.url);
                 }else if (item.status == 'running' && item.try_time >= _self.task_max_try) {
                     //设置任务失败
                     _self.taskStatus.running --;
                     _self.taskStatus.failed ++;
                     _self.tasks[index].status = 'failed';
                     _self.tasks[index].error = 'Task max try time got.';
-                    common.error('Task %s failed, got the max try time.', item.id);
+                    common.error('Task %s failed, got the max try time, url: %s.', item.id, item.url);
                 }
             });
         }, {
