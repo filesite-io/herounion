@@ -16,9 +16,9 @@ app.disable('x-powered-by');
 app.use(express.static('public'));
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ limit: '2mb', extended: false }))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 // parse application/json
-app.use(bodyParser.json({ limit: '2mb' }))
+app.use(bodyParser.json({ limit: '10mb' }))
 
 app.use('/api', apiRouter);
 
