@@ -140,3 +140,29 @@ test('Common function saveLog test', async (t) => {
     saved = await common.saveLog(filename, JSON.stringify(data));
     assert.equal(saved, false);
 });
+
+test('Common function isUrlOk test', async (t) => {
+    let url = 'https://www.bilibili.com/video/BV1AM41137LB/?share_source=copy_web';
+    let urlOk = common.isUrlOk(url);
+    assert.equal(urlOk, true);
+
+    //case 2
+    url = 'https://www.bilibili.com/video/BV1AM41137LB/';
+    urlOk = common.isUrlOk(url);
+    assert.equal(urlOk, true);
+
+    //case 3
+    url = 'http://127.0.0.1:8080/video/BV1AM41137LB.html';
+    urlOk = common.isUrlOk(url);
+    assert.equal(urlOk, true);
+
+    //case 4
+    url = '//127.0.0.1:8080/video/BV1AM41137LB.html';
+    urlOk = common.isUrlOk(url);
+    assert.equal(urlOk, false);
+
+    //case 5
+    url = 'https://www.bil-ibili.com/video/BV1AM4_1137LB/';
+    urlOk = common.isUrlOk(url);
+    assert.equal(urlOk, true);
+});
