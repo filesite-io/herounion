@@ -353,16 +353,16 @@ class HeroUnion {
         if (taskIndex > -1) {
             this.tasks[taskIndex].notified = notified;
             this.tasks[taskIndex].notify_time ++;
-        }
 
-        //更新任务通知状态数据
-        if (notified) {
-            this.taskNotifyStatus.total ++;
-            this.taskNotifyStatus.done ++;
-        }else if (!notified && this.tasks[taskIndex].notify_time == this.notify_max_try) {
-            this.taskNotifyStatus.total ++;
-            this.taskNotifyStatus.failed ++;
-            common.error('[FAILED] Finally failed after %s try, notify to %s', this.notify_max_try, notify_url);
+            //更新任务通知状态数据
+            if (notified) {
+                this.taskNotifyStatus.done ++;
+                this.taskNotifyStatus.total = this.taskNotifyStatus.done + this.taskNotifyStatus.failed;
+            }else if (!notified && this.tasks[taskIndex].notify_time == this.notify_max_try) {
+                this.taskNotifyStatus.failed ++;
+                this.taskNotifyStatus.total = this.taskNotifyStatus.done + this.taskNotifyStatus.failed;
+                common.error('[FAILED] Finally failed after %s try, notify to %s', this.notify_max_try, notify_url);
+            }
         }
 
         return notified;
@@ -471,17 +471,17 @@ class HeroUnion {
                 ) {
                     if (_self.taskStatus[item.status] >= 1) {
                         _self.taskStatus[item.status] --;
-                    }
-                    if (_self.taskStatus.total >= 1) {
-                        _self.taskStatus.total --;
+
+                        if (_self.taskStatus.total >= 1) {
+                            _self.taskStatus.total --;
+                        }
                     }
 
                     let notify_status = item.notified ? 'done' : 'failed';
                     if (_self.taskNotifyStatus[notify_status] >= 1) {
                         _self.taskNotifyStatus[notify_status] --;
-                    }
-                    if (_self.taskNotifyStatus.total >= 1) {
-                        _self.taskNotifyStatus.total --;
+
+                        _self.taskNotifyStatus.total = _self.taskNotifyStatus.done + _self.taskNotifyStatus.failed;
                     }
 
                     common.log('Task %s is expired, which is created at %s', item.id, item.created);
