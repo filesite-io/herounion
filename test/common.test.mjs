@@ -165,4 +165,9 @@ test('Common function isUrlOk test', async (t) => {
     url = 'https://www.bil-ibili.com/video/BV1AM4_1137LB/';
     urlOk = common.isUrlOk(url);
     assert.equal(urlOk, true);
+
+    //case 6
+    url = 'https://tajian.tv/1000/frontapi/hunotify/';
+    urlOk = common.isUrlOk(url);
+    assert.equal(urlOk, true);
 });

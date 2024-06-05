@@ -31,8 +31,9 @@ import md5 from 'md5';
 class HeroUnion {
 
     //构造函数，设置默认配置
-    constructor() {
+    constructor(configFilename) {
         this.config = null;
+        this.configFile = typeof(configFilename) != 'undefined' && configFilename ? configFilename : 'config.json';
 
         //默认配置
         this.systemLogDir = 'log/';                            //系统日志保存目录
@@ -100,7 +101,8 @@ class HeroUnion {
         const _self = this;
 
         if ( !this.config || (typeof(forceReload) != 'undefined' && forceReload) ) {
-            let config = await common.getConfigFromJsonFile('config.json');
+            common.log("Load config from %s", this.configFile);
+            let config = await common.getConfigFromJsonFile(this.configFile);
 
             //覆盖默认配置
             for (const key in config) {
@@ -318,9 +320,6 @@ class HeroUnion {
     async handleTaskDone(task) {
         let notified = false;
         let notify_url = task.notify_url;
-        if (!notify_url || common.isUrlOk(notify_url) == false) {
-            return false;
-        }
 
         try {
             common.log('[%s] Try to notify task %s via %s', task.notify_time, task.id, notify_url);
@@ -540,13 +539,18 @@ class HeroUnion {
     }
 
     //定期尝试给已完成状态的任务notify_url发送通知回调
+    //bug fix：忽略没有notify_url的任务
     autoNotifyTasks() {
         const _self = this;
 
         const frequence = typeof(this.config.autoNotifyTaskFrequence) != 'undefined'
                             && this.config.autoNotifyTaskFrequence ? this.config.autoNotifyTaskFrequence : 2;    //2 分钟检查一次
         const cronjob = cron.schedule(`*/${frequence} * * * *`, () =>  {
-            let task = _self.tasks.find((item) => item.status == 'done' && item.notified == false && item.notify_time < _self.notify_max_try);
+            let task = _self.tasks.find((item)  =>  common.isUrlOk(item.notify_url) &&
+                                                    item.status == 'done' &&
+                                                    item.notified == false &&
+                                                    item.notify_time < _self.notify_max_try
+                                        );
             if (task) {
                 _self.handleTaskDone(task);
             }
