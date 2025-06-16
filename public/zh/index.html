@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
-    <title>HeroUnion - Open source web crawler union.</title>
+    <title>HeroUnion英雄联盟 - 开源的网络爬虫联盟</title>
     <meta name="author" content="filesite.io">
-    <meta name="description" content="HeroUnion: Open source web crawler union.">
+    <meta name="description" content="HeroUnion简称英雄联盟，开源的网络爬虫联盟。">
     <style>
         *,body{margin:0;padding:0}
         body{padding:8px;max-width:640px;margin:0 auto}
@@ -43,7 +43,7 @@
     </style>
 </head>
 <body>
-    <h1 class="text-center">HeroUnion<small> - Open source web crawler union</small></h1>
+    <h1 class="text-center">HeroUnion英雄联盟<small> - 开源的网络爬虫联盟</small></h1>
 
     <hr class="mt-d5">
     <p class="text-right mt-d5">
@@ -51,112 +51,120 @@
         <a href="/zh/" class="mx-d2">简体中文</a>
     </p>
 
-    <h3 class="mt-2">HeroUnion Stats - It's running <span class="run_time">...</span></h3>
+    <h3 class="mt-2">HeroUnion联盟状态 - 已运行<span class="run_time">...</span></h3>
 
-    <h4 class="mt-d5">Tasks Stats (Last <span class="cache_time">...</span>)</h4>
+    <h4 class="mt-d5">任务状态（最近<span class="cache_time">...</span>）</h4>
     <div class="stats taskStatus">
         <span class="col info">
             <strong class="waiting">...</strong>
-            <label>Waiting</label>
+            <label>等待中</label>
         </span>
         <span class="col warning">
             <strong class="running">...</strong>
-            <label>Running</label>
+            <label>执行中</label>
         </span>
         <div>
             <span class="col">
                 <strong class="total">...</strong>
-                <label>Total</label>
+                <label>总数</label>
             </span>
             <span class="col success">
                 <strong class="done">...</strong>
-                <label>Done</label>
+                <label>完成</label>
             </span>
             <span class="col danger">
                 <strong class="failed">...</strong>
-                <label>Failed</label>
+                <label>失败</label>
             </span>
         </div>
     </div>
 
-    <h4 class="mt-d5">Notify Stats (Last <span class="cache_time">...</span>)</h4>
+    <h4 class="mt-d5">任务通知状态（最近<span class="cache_time">...</span>）</h4>
     <div class="stats taskNotifyStatus">
         <span class="col">
             <strong class="total">...</strong>
-            <label>Total</label>
+            <label>总数</label>
         </span>
         <span class="col success">
             <strong class="done">...</strong>
-            <label>Done</label>
+            <label>完成</label>
         </span>
         <span class="col danger">
             <strong class="failed">...</strong>
-            <label>Failed</label>
+            <label>失败</label>
         </span>
     </div>
 
-    <h4 class="mt-d5">Bot Stats</h4>
+    <h4 class="mt-d5">爬虫状态</h4>
     <div class="stats heroStatus">
         <span class="col">
             <strong class="total">...</strong>
-            <label>Total</label>
+            <label>总数</label>
         </span>
         <span class="col success">
             <strong class="idle">...</strong>
-            <label>Idle</label>
+            <label>空闲</label>
         </span>
         <span class="col warning">
             <strong class="busy">...</strong>
-            <label>Busy</label>
+            <label>繁忙</label>
         </span>
         <span class="col disable">
             <strong class="offline">...</strong>
-            <label>Offline</label>
+            <label>离线</label>
         </span>
     </div>
 
-    <h4 class="mt-d5">JSON Data</h4>
+    <h4 class="mt-d5">JSON数据</h4>
     <pre><code id="herounion_stats">...</code></pre>
 
-    <h3 class="mt-2">Covenant of the Alliance</h3>
-    <p class="mt-1">Please abide by the following conventions and stick to it for a better tomorrow for yourself and the whole society! </p>
+    <h3 class="mt-2">HeroUnion联盟公约</h3>
+    <p class="mt-1">请大家遵守以下公约，为自己、也为全社会有更好的明天一起坚持！</p>
     <ul class="mt-d5">
-        <li>Comply with local/national laws and regulations</li>
-        <li>Information protected by law will not be crawled (for example: personal privacy data mobile phone number, ID number, etc.)</li>
-        <li>Data that requires login or VIP status to access will not be crawled</li>
-        <li>Data that is explicitly prohibited from being collected by the target website will not be crawled</li>
-        <li>The commercial core data of the target website is not crawled</li>
-        <li>Low concurrency, low frequency, does not affect the normal operation of the target website</li>
+        <li>遵守本地/本国法律、法规</li>
+        <li>受法律保护的信息不爬（例如：个人隐私数据手机号码、身份证号码等等）</li>
+        <li>需要登录，或需要VIP身份才能访问的数据不爬</li>
+        <li>目标网站明确禁止采集的数据不爬</li>
+        <li>目标网站商业核心数据不爬</li>
+        <li>低并发，低频率，不影响目标网站正常运行</li>
     </ul>
 
-    <h3 class="mt-2">Bots</h3>
-    <dl class="mt-d5" id="herobots">...</dl>
+    <h3 class="mt-2">Hero爬虫列表</h3>
+    <dl class="mt-d5" id="herobots">
+        <!--
+        <dt>爬虫 1 <small>空闲</small></dt>
+        <dd>
+            Machete的Hero爬虫
+            - https://tajian.tv
+        </dd>
+        -->
+    </dl>
 
-    <h3 class="mt-2">HeroUnion App</h3>
+    <h3 class="mt-2">HeroUnion应用</h3>
     <ul class="mt-d5">
         <li>
-            <strong>Website monitor:</strong>
-            <a href="https://monitor.filesite.io/d/ddntdyyhv943ke/e7bd91-e7ab99-e79b91-e68ea7?orgId=1" target="_blank">FileSite.io Monitor</a>,
-            <a href="https://github.com/filesite-io/monit-via-herounion" target="_blank">Monitor source code download</a>
+            <strong>网站监控：</strong>
+            <a href="https://monitor.filesite.io/d/ddntdyyhv943ke/e7bd91-e7ab99-e79b91-e68ea7?orgId=1" target="_blank">Ta荐、FileSite.io监控</a>，
+            <a href="https://github.com/filesite-io/monit-via-herounion" target="_blank">网站监控源码下载</a>
         </li>
         <li>
-            <strong>Web Scraper:</strong>
-            <a href="https://tajian.tv/" target="_blank">TaJian.tv - video box</a>，
-            <a href="https://github.com/filesite-io/machete" target="_blank">Machete source code download</a>
+            <strong>数据抓取：</strong>
+            <a href="https://tajian.tv/" target="_blank">Ta荐 - B站、抖音、快手、西瓜视频整理工具</a>，
+            <a href="https://github.com/filesite-io/machete" target="_blank">Machete源码下载</a>
         </li>
     </ul>
 
-    <h3 class="mt-1">HeroUnion download</h3>
+    <h3 class="mt-1">HeroUnion源码下载</h3>
     <p><a href="https://github.com/filesite-io/herounion" target="_blank">https://github.com/filesite-io/herounion</a></p>
 
-    <h3 class="mt-1">HeroBot download</h3>
+    <h3 class="mt-1">HeroBot - Machete Hero源码下载</h3>
     <p><a href="https://github.com/filesite-io/machete_hero" target="_blank">https://github.com/filesite-io/machete_hero</a></p>
 
 
     <footer class="mt-4">
         <p>
-            <strong>Disclaimer:</strong>
-            <br>HeroUnion<strong> is only responsible for the scheduling of crawlers and tasks</strong>. The contracts supported by crawlers and the specific content of tasks have nothing to do with the alliance.
+            <strong>免责申明：</strong>
+            <br>HeroUnion英雄联盟<strong>只负责爬虫和任务的调度</strong>，爬虫所支持的合约以及任务具体内容与联盟无关。
         </p>
         <p class="mt-2 text-center">&copy;copyright <a href="https://herounion.website/" target="_blank">HeroUnion.Website</a></p>
     </footer>
@@ -166,14 +174,14 @@
         var formatSeconds = function(secs) {
             var str = secs + '秒';
             if (secs > 86400) {
-                str = Math.floor(secs/86400) + ' days';
+                str = Math.floor(secs/86400) + '天';
             }else if (secs > 3600) {
-                str = Math.floor(secs/3600) + ' hours';
+                str = Math.floor(secs/3600) + '小时';
             }else if (secs > 300) {
-                str = Math.floor(secs/60) + ' minutes';
+                str = Math.floor(secs/60) + '分钟';
             }else if (secs > 86400*365) {
-                str = Math.floor(secs/86400/365) + ' years'
-                        + Math.floor( (secs - Math.floor(secs/86400/365)) / 86400 ) + ' days';
+                str = Math.floor(secs/86400/365) + '年'
+                        + Math.floor( (secs - Math.floor(secs/86400/365)) / 86400 ) + '天';
             }
 
             return str;
@@ -191,11 +199,11 @@
 
         var renderHeros = function(heros) {
             if (!heros || heros.length == 0) {
-                $('#herobots').text('There is no bot online.');
+                $('#herobots').text('暂无爬虫加入联盟。');
                 return;
             }
 
-            var txtStatus = {idle: 'Idle', busy: 'Busy', offline: 'Offline'};
+            var txtStatus = {idle: '空闲', busy: '繁忙', offline: '离线'};
             var html = '', item;
             for (var index in heros) {
                 item = heros[index];
@@ -203,9 +211,9 @@
                         + txtStatus[item['status']] + '</small></dt>';
                 html += '<dd>'
                         + htmlspecialchars(item['description'])
-                        + '<br>Platforms: ' + JSON.stringify(item['platforms'])
-                        + ', Contracts: ' + JSON.stringify(item['contracts'])
-                        + ', Contact: ' + htmlspecialchars(item['contact'])
+                        + '<br>支持平台：' + JSON.stringify(item['platforms'])
+                        + '，支持合约：' + JSON.stringify(item['contracts'])
+                        + '，联系方式：' + htmlspecialchars(item['contact'])
                         + '</dd>';
             }
 

@@ -1,12 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en-US">
+<html lang="en-us">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
-    <title>HeroUnion - Open source web crawler union.</title>
-    <meta name="author" content="filesite.io">
-    <meta name="description" content="HeroUnion: Open source web crawler union.">
+    <title>{HeroUnion - Open source web crawler union.}</title>
+    <meta name="author" content="{HeroUnion.website}">
+    <meta name="description" content="{HeroUnion: Open source web crawler union.}">
     <style>
         *,body{margin:0;padding:0}
         body{padding:8px;max-width:640px;margin:0 auto}
@@ -37,134 +37,157 @@
         .danger{background-color:red}
         .disable{background-color:gray}
 
+        .langswitcher{position:relative}
+        .langswitcher button{padding:2px 4px;cursor:pointer}
+        .dropmenu{display:none;position:absolute;right:0;top:28px;padding:5px;width:80px;background-color:#FFF;border:1px solid #EEE}
+        .dropmenu li{list-style:none;padding:0;margin:3px 0;text-align:center}
+
         @media(max-width:480px) {
             h1 small{display:block}
         }
     </style>
 </head>
 <body>
-    <h1 class="text-center">HeroUnion<small> - Open source web crawler union</small></h1>
+    <h1 class="text-center">{HeroUnion<small> - Open source web crawler union</small>}</h1>
 
     <hr class="mt-d5">
-    <p class="text-right mt-d5">
-        <a href="/" class="mx-d2">English</a>
-        <a href="/zh/" class="mx-d2">简体中文</a>
-    </p>
+    <div class="text-right mt-d5 langswitcher">
+        <button data-status="closed">English</button>
+        <ul class="dropmenu">
+            <li><a href="/">English</a></li>
+            <li><a href="/zh/">简体中文</a></li>
+        </ul>
+    </div>
 
-    <h3 class="mt-2">HeroUnion Stats - It's running <span class="run_time">...</span></h3>
+    <h3 class="mt-2">{HeroUnion Stats} {It's running} <span class="run_time">...</span></h3>
 
-    <h4 class="mt-d5">Tasks Stats (Last <span class="cache_time">...</span>)</h4>
+    <h4 class="mt-d5">{Tasks Stats} ({Last} <span class="cache_time">...</span>)</h4>
     <div class="stats taskStatus">
         <span class="col info">
             <strong class="waiting">...</strong>
-            <label>Waiting</label>
+            <label>{Waiting}</label>
         </span>
         <span class="col warning">
             <strong class="running">...</strong>
-            <label>Running</label>
+            <label>{Running}</label>
         </span>
         <div>
             <span class="col">
                 <strong class="total">...</strong>
-                <label>Total</label>
+                <label>{Total}</label>
             </span>
             <span class="col success">
                 <strong class="done">...</strong>
-                <label>Done</label>
+                <label>{Done}</label>
             </span>
             <span class="col danger">
                 <strong class="failed">...</strong>
-                <label>Failed</label>
+                <label>{Failed}</label>
             </span>
         </div>
     </div>
 
-    <h4 class="mt-d5">Notify Stats (Last <span class="cache_time">...</span>)</h4>
+    <h4 class="mt-d5">{Notify Stats} ({Last} <span class="cache_time">...</span>)</h4>
     <div class="stats taskNotifyStatus">
         <span class="col">
             <strong class="total">...</strong>
-            <label>Total</label>
+            <label>{Total}</label>
         </span>
         <span class="col success">
             <strong class="done">...</strong>
-            <label>Done</label>
+            <label>{Done}</label>
         </span>
         <span class="col danger">
             <strong class="failed">...</strong>
-            <label>Failed</label>
+            <label>{Failed}</label>
         </span>
     </div>
 
-    <h4 class="mt-d5">Bot Stats</h4>
+    <h4 class="mt-d5">{Bot Stats}</h4>
     <div class="stats heroStatus">
         <span class="col">
             <strong class="total">...</strong>
-            <label>Total</label>
+            <label>{Total}</label>
         </span>
         <span class="col success">
             <strong class="idle">...</strong>
-            <label>Idle</label>
+            <label>{Idle}</label>
         </span>
         <span class="col warning">
             <strong class="busy">...</strong>
-            <label>Busy</label>
+            <label>{Busy}</label>
         </span>
         <span class="col disable">
             <strong class="offline">...</strong>
-            <label>Offline</label>
+            <label>{Offline}</label>
         </span>
     </div>
 
-    <h4 class="mt-d5">JSON Data</h4>
+    <h4 class="mt-d5">{JSON Data}</h4>
     <pre><code id="herounion_stats">...</code></pre>
 
-    <h3 class="mt-2">Covenant of the Alliance</h3>
-    <p class="mt-1">Please abide by the following conventions and stick to it for a better tomorrow for yourself and the whole society! </p>
+    <h3 class="mt-2">{Covenant of the Alliance}</h3>
+    <p class="mt-1">{Please abide by the following conventions and stick to it for a better tomorrow for yourself and the whole society!}</p>
     <ul class="mt-d5">
-        <li>Comply with local/national laws and regulations</li>
-        <li>Information protected by law will not be crawled (for example: personal privacy data mobile phone number, ID number, etc.)</li>
-        <li>Data that requires login or VIP status to access will not be crawled</li>
-        <li>Data that is explicitly prohibited from being collected by the target website will not be crawled</li>
-        <li>The commercial core data of the target website is not crawled</li>
-        <li>Low concurrency, low frequency, does not affect the normal operation of the target website</li>
+        <li>{Comply with local/national laws and regulations}</li>
+        <li>{Information protected by law will not be crawled (for example: personal privacy data mobile phone number, ID number, etc.)}</li>
+        <li>{Data that requires login or VIP status to access will not be crawled}</li>
+        <li>{Data that is explicitly prohibited from being collected by the target website will not be crawled}</li>
+        <li>{The commercial core data of the target website is not crawled}</li>
+        <li>{Low concurrency, low frequency, does not affect the normal operation of the target website}</li>
     </ul>
 
-    <h3 class="mt-2">Bots</h3>
+    <h3 class="mt-2">{Bots}</h3>
     <dl class="mt-d5" id="herobots">...</dl>
 
-    <h3 class="mt-2">HeroUnion App</h3>
+    <h3 class="mt-2">{HeroUnion App}</h3>
     <ul class="mt-d5">
         <li>
-            <strong>Website monitor:</strong>
+            <strong>{Website monitor:}</strong>
             <a href="https://monitor.filesite.io/d/ddntdyyhv943ke/e7bd91-e7ab99-e79b91-e68ea7?orgId=1" target="_blank">FileSite.io Monitor</a>,
             <a href="https://github.com/filesite-io/monit-via-herounion" target="_blank">Monitor source code download</a>
         </li>
         <li>
-            <strong>Web Scraper:</strong>
+            <strong>{Web Scraper:}</strong>
             <a href="https://tajian.tv/" target="_blank">TaJian.tv - video box</a>，
             <a href="https://github.com/filesite-io/machete" target="_blank">Machete source code download</a>
         </li>
     </ul>
 
-    <h3 class="mt-1">HeroUnion download</h3>
+    <h3 class="mt-1">{HeroUnion download}</h3>
     <p><a href="https://github.com/filesite-io/herounion" target="_blank">https://github.com/filesite-io/herounion</a></p>
 
-    <h3 class="mt-1">HeroBot download</h3>
+    <h3 class="mt-1">{HeroBot download}</h3>
     <p><a href="https://github.com/filesite-io/machete_hero" target="_blank">https://github.com/filesite-io/machete_hero</a></p>
 
 
     <footer class="mt-4">
         <p>
-            <strong>Disclaimer:</strong>
-            <br>HeroUnion<strong> is only responsible for the scheduling of crawlers and tasks</strong>. The contracts supported by crawlers and the specific content of tasks have nothing to do with the alliance.
+            <strong>{Disclaimer:}</strong>
+            <br>{HeroUnion<strong> is only responsible for the scheduling of crawlers and tasks</strong>.}
+            {The contracts supported by crawlers and the specific content of tasks have nothing to do with the alliance.}
         </p>
         <p class="mt-2 text-center">&copy;copyright <a href="https://herounion.website/" target="_blank">HeroUnion.Website</a></p>
     </footer>
 
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
+        var toggleLangSwitcher = function(evt) {
+            var btn = evt.target;
+            if (!btn) {return false;}
+            var status = $(btn).attr('data-status');
+            if (status == 'closed') {
+                $('.langswitcher .dropmenu').show();
+                $(btn).attr('data-status', 'opened');
+            }else {
+                $('.langswitcher .dropmenu').hide();
+                $(btn).attr('data-status', 'closed');
+            }
+        };
+        $('.langswitcher button').click(toggleLangSwitcher);
+
         var formatSeconds = function(secs) {
-            var str = secs + '秒';
+            var str = secs + ' seconds';
             if (secs > 86400) {
                 str = Math.floor(secs/86400) + ' days';
             }else if (secs > 3600) {

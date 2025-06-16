@@ -3,3 +3,5 @@ node_modules/
 tmp/
 log/tasks.log
 log/test.log
+.DS_Store
+conf/my_config.json

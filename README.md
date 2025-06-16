@@ -219,7 +219,7 @@ contact: 可选，爬虫提供方联系方式，将在英雄联盟网站展示�
 
 参数说明，其中country国家代码和lang语言代码参数值请参考下面标准：
 * [country代码参考两位ISO CODES](https://countrycode.org/)
-* [lang语言代码参考ISO 639-1 Code](https://www.loc.gov/standards/iso639-2/php/code_list.php)
+* [lang语言代码参考ISO 639-1 Code](https://www.andiamo.co.uk/resources/iso-language-codes/)
 
 
 ### 爬虫任务领取接口

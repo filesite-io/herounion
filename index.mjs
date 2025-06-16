@@ -26,13 +26,13 @@ app.use('/api', apiRouter);
 app.get('/', (req, res) => {
     return res.send('Welcome to Hero Union of filesite.io');
 });
-*/
 
 app.post('/test', (req, res) => {
     console.log('Post data got in /test', req.body);
 
     return res.status(200).send('Done');
 });
+*/
 
 //error handler
 app.use((err, req, res, next) => {
