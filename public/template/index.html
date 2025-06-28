@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>{HeroUnion - Open source web crawler union.}</title>
     <meta name="author" content="{HeroUnion.website}">
-    <meta name="description" content="{HeroUnion: Open source web crawler union.}">
+    <meta name="description" content="{HeroUnion - Open source web crawler union.}">
     <style>
         *,body{margin:0;padding:0}
         body{padding:8px;max-width:640px;margin:0 auto}
@@ -26,6 +26,7 @@
         .mt-2{margin-top:2em}
         .mt-4{margin-top:4em}
         .mx-d2{margin-left:.5em;margin-right:.2em}
+        .icon{vertical-align:middle}
 
         .stats{background-color:#EEE;padding:10px 10px 4px 10px}
         .col{display:inline-block;padding:13px 4px;width:20%;background:#444;color:#FFF;margin-right:4px;margin-bottom:6px;text-align:center}
@@ -52,10 +53,19 @@
 
     <hr class="mt-d5">
     <div class="text-right mt-d5 langswitcher">
-        <button data-status="closed">English</button>
+        <button data-status="closed">
+            <img src="/globe.svg" alt="Globe language switcher" class="icon">
+            {Current Lang}
+        </button>
         <ul class="dropmenu">
             <li><a href="/">English</a></li>
             <li><a href="/zh/">简体中文</a></li>
+            <li><a href="/zh-tw/">繁體中文</a></li>
+            <li><a href="/es/">Español</a></li>
+            <li><a href="/de/">Deutsch</a></li>
+            <li><a href="/ru/">Русский</a></li>
+            <li><a href="/ja/">日本語</a></li>
+            <li><a href="/hi/">हिन्दी</a></li>
         </ul>
     </div>
 
@@ -130,7 +140,7 @@
     <p class="mt-1">{Please abide by the following conventions and stick to it for a better tomorrow for yourself and the whole society!}</p>
     <ul class="mt-d5">
         <li>{Comply with local/national laws and regulations}</li>
-        <li>{Information protected by law will not be crawled (for example: personal privacy data mobile phone number, ID number, etc.)}</li>
+        <li>{Information protected by law will not be crawled} ({for example}: {personal privacy data mobile phone number, ID number, etc.})</li>
         <li>{Data that requires login or VIP status to access will not be crawled}</li>
         <li>{Data that is explicitly prohibited from being collected by the target website will not be crawled}</li>
         <li>{The commercial core data of the target website is not crawled}</li>
@@ -143,12 +153,12 @@
     <h3 class="mt-2">{HeroUnion App}</h3>
     <ul class="mt-d5">
         <li>
-            <strong>{Website monitor:}</strong>
+            <strong>{Website monitor}:</strong>
             <a href="https://monitor.filesite.io/d/ddntdyyhv943ke/e7bd91-e7ab99-e79b91-e68ea7?orgId=1" target="_blank">FileSite.io Monitor</a>,
             <a href="https://github.com/filesite-io/monit-via-herounion" target="_blank">Monitor source code download</a>
         </li>
         <li>
-            <strong>{Web Scraper:}</strong>
+            <strong>{Web Scraper}:</strong>
             <a href="https://tajian.tv/" target="_blank">TaJian.tv - video box</a>，
             <a href="https://github.com/filesite-io/machete" target="_blank">Machete source code download</a>
         </li>
@@ -163,7 +173,7 @@
 
     <footer class="mt-4">
         <p>
-            <strong>{Disclaimer:}</strong>
+            <strong>{Disclaimer}:</strong>
             <br>{HeroUnion<strong> is only responsible for the scheduling of crawlers and tasks</strong>.}
             {The contracts supported by crawlers and the specific content of tasks have nothing to do with the alliance.}
         </p>

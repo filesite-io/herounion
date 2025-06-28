@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
-    <title>HeroUnion - 开源网络爬虫联盟。</title>
-    <meta name="author" content="HeroUnion.website">
-    <meta name="description" content="HeroUnion - 开源网络爬虫联盟。">
+    <title>HeroUnion - Unión de rastreadores web de código abierto.</title>
+    <meta name="author" content="Sitio web de HeroUnion">
+    <meta name="description" content="HeroUnion - Unión de rastreadores web de código abierto.">
     <style>
         *,body{margin:0;padding:0}
         body{padding:8px;max-width:640px;margin:0 auto}
@@ -49,13 +49,13 @@
     </style>
 </head>
 <body>
-    <h1 class="text-center">HeroUnion<small> - 开源网络爬虫联盟</small></h1>
+    <h1 class="text-center">HeroUnion <small>- Unión de rastreadores web de código abierto</small></h1>
 
     <hr class="mt-d5">
     <div class="text-right mt-d5 langswitcher">
         <button data-status="closed">
             <img src="/globe.svg" alt="Globe language switcher" class="icon">
-            简体中文
+            Español
         </button>
         <ul class="dropmenu">
             <li><a href="/">English</a></li>
@@ -69,113 +69,113 @@
         </ul>
     </div>
 
-    <h3 class="mt-2">HeroUnion状态 已运行 <span class="run_time">...</span></h3>
+    <h3 class="mt-2">Estadísticas de HeroUnion Esta corriendo <span class="run_time">...</span></h3>
 
-    <h4 class="mt-d5">任务状态 (上次 <span class="cache_time">...</span>)</h4>
+    <h4 class="mt-d5">Estadísticas de tareas (Último <span class="cache_time">...</span>)</h4>
     <div class="stats taskStatus">
         <span class="col info">
             <strong class="waiting">...</strong>
-            <label>等待中</label>
+            <label>Espera</label>
         </span>
         <span class="col warning">
             <strong class="running">...</strong>
-            <label>正在运行</label>
+            <label>Correr</label>
         </span>
         <div>
             <span class="col">
                 <strong class="total">...</strong>
-                <label>总计</label>
+                <label>Total</label>
             </span>
             <span class="col success">
                 <strong class="done">...</strong>
-                <label>已完成</label>
+                <label>Hecho</label>
             </span>
             <span class="col danger">
                 <strong class="failed">...</strong>
-                <label>失败</label>
+                <label>Fallido</label>
             </span>
         </div>
     </div>
 
-    <h4 class="mt-d5">通知状态 (上次 <span class="cache_time">...</span>)</h4>
+    <h4 class="mt-d5">Notificar estadísticas (Último <span class="cache_time">...</span>)</h4>
     <div class="stats taskNotifyStatus">
         <span class="col">
             <strong class="total">...</strong>
-            <label>总计</label>
+            <label>Total</label>
         </span>
         <span class="col success">
             <strong class="done">...</strong>
-            <label>已完成</label>
+            <label>Hecho</label>
         </span>
         <span class="col danger">
             <strong class="failed">...</strong>
-            <label>失败</label>
+            <label>Fallido</label>
         </span>
     </div>
 
-    <h4 class="mt-d5">机器人状态</h4>
+    <h4 class="mt-d5">Estadísticas del bot</h4>
     <div class="stats heroStatus">
         <span class="col">
             <strong class="total">...</strong>
-            <label>总计</label>
+            <label>Total</label>
         </span>
         <span class="col success">
             <strong class="idle">...</strong>
-            <label>空闲</label>
+            <label>Inactivo</label>
         </span>
         <span class="col warning">
             <strong class="busy">...</strong>
-            <label>繁忙</label>
+            <label>Ocupado</label>
         </span>
         <span class="col disable">
             <strong class="offline">...</strong>
-            <label>离线</label>
+            <label>Desconectado</label>
         </span>
     </div>
 
-    <h4 class="mt-d5">JSON数据</h4>
+    <h4 class="mt-d5">Datos JSON</h4>
     <pre><code id="herounion_stats">...</code></pre>
 
-    <h3 class="mt-2">联盟盟约</h3>
-    <p class="mt-1">为了您自己和整个社会更美好的明天，请遵守以下约定并坚持下去！</p>
+    <h3 class="mt-2">Pacto de la Alianza</h3>
+    <p class="mt-1">¡Por favor, respete las siguientes convenciones y cúmplalas para un mejor mañana para usted y para toda la sociedad!</p>
     <ul class="mt-d5">
-        <li>遵守当地/国家法律法规</li>
-        <li>受法律保护的信息将不会被抓取 (例如: 个人隐私数据、手机号码、身份证号码等。)</li>
-        <li>需要登录或VIP身份才能访问的数据将不会被抓取</li>
-        <li>目标网站明确禁止收集的数据将不会被抓取</li>
-        <li>目标网站的商业核心数据将不会被抓取</li>
-        <li>低并发、低频率，不影响目标网站的正常运行</li>
+        <li>Cumplir con las leyes y regulaciones locales/nacionales</li>
+        <li>La información protegida por la ley no será rastreada (Por ejemplo: Datos personales de privacidad: número de teléfono móvil, número de identificación, etc.)</li>
+        <li>No se rastrearán los datos que requieren inicio de sesión o estado VIP para acceder.</li>
+        <li>No se rastrearán los datos cuya recopilación esté explícitamente prohibida por el sitio web de destino.</li>
+        <li>No se rastrean los datos comerciales principales del sitio web de destino</li>
+        <li>Baja concurrencia, baja frecuencia, no afecta el funcionamiento normal del sitio web de destino.</li>
     </ul>
 
-    <h3 class="mt-2">机器人</h3>
+    <h3 class="mt-2">Bots</h3>
     <dl class="mt-d5" id="herobots">...</dl>
 
-    <h3 class="mt-2">HeroUnion App</h3>
+    <h3 class="mt-2">Aplicación HeroUnion</h3>
     <ul class="mt-d5">
         <li>
-            <strong>网站监控:</strong>
+            <strong>Monitor de sitios web:</strong>
             <a href="https://monitor.filesite.io/d/ddntdyyhv943ke/e7bd91-e7ab99-e79b91-e68ea7?orgId=1" target="_blank">FileSite.io Monitor</a>,
             <a href="https://github.com/filesite-io/monit-via-herounion" target="_blank">Monitor source code download</a>
         </li>
         <li>
-            <strong>网页爬虫:</strong>
+            <strong>Raspador web:</strong>
             <a href="https://tajian.tv/" target="_blank">TaJian.tv - video box</a>，
             <a href="https://github.com/filesite-io/machete" target="_blank">Machete source code download</a>
         </li>
     </ul>
 
-    <h3 class="mt-1">HeroUnion下载</h3>
+    <h3 class="mt-1">Descarga de HeroUnion</h3>
     <p><a href="https://github.com/filesite-io/herounion" target="_blank">https://github.com/filesite-io/herounion</a></p>
 
-    <h3 class="mt-1">HeroBot下载</h3>
+    <h3 class="mt-1">Descargar HeroBot</h3>
     <p><a href="https://github.com/filesite-io/machete_hero" target="_blank">https://github.com/filesite-io/machete_hero</a></p>
 
 
     <footer class="mt-4">
         <p>
-            <strong>免责声明:</strong>
-            <br>HeroUnion<strong>仅负责爬虫和任务的调度</strong>。
-            爬虫支持的合约及任务的具体内容与联盟无关。
+            <strong>Descargo de responsabilidad:</strong>
+            <br>HeroUnion <strong>solo es responsable de la programación de rastreadores y tareas</strong> .
+            Los contratos respaldados por los rastreadores y el contenido específico de las tareas no tienen nada que ver con la alianza.
         </p>
         <p class="mt-2 text-center">&copy;copyright <a href="https://herounion.website/" target="_blank">HeroUnion.Website</a></p>
     </footer>

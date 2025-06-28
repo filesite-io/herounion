@@ -133,7 +133,7 @@ class Common {
 
     //检查url是否符合要求
     isUrlOk(url) {
-        return /^http(s)?:\/\/[\w\-\.\/:\?\=]{6,100}$/i.test(url);
+        return /^http(s)?:\/\/[\w\-\.\/:\?\=_&]{6,150}$/i.test(url);
     }
 
     //检查uuid是否符合要求：6-32位的英文字符串

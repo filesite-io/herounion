@@ -18,6 +18,8 @@
     },
     "scripts": {
         "start": "node index.mjs",
-        "test": "node test/heroUnion.test.mjs"
+        "test": "node test/heroUnion.test.mjs",
+        "i18n_init": "node test/i18n.test.mjs init",
+        "i18n_build": "node test/i18n.test.mjs build"
     }
 }
