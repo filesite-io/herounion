@@ -29,7 +29,7 @@
     "HeroUnion App": "Приложение HeroUnion",
     "HeroUnion download": "HeroUnion скачать",
     "HeroBot download": "HeroBot скачать",
-    "HeroUnion<strong> is only responsible for the scheduling of crawlers and tasks</strong>.": "HeroUnion <strong>отвечает только за планирование работы сканеров и задач</strong> .",
+    "HeroUnion<strong> is only responsible for the scheduling of crawlers and tasks</strong>,": "HeroUnion <strong>отвечает только за планирование работы сканеров и задач</strong>,",
     "The contracts supported by crawlers and the specific content of tasks have nothing to do with the alliance.": "Контракты, поддерживаемые краулерами, и конкретное содержание задач не имеют никакого отношения к альянсу.",
     "Website monitor": "Монитор веб-сайта",
     "Web Scraper": "Веб-скрейпер",

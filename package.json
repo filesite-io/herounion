@@ -20,6 +20,6 @@
         "start": "node index.mjs",
         "test": "node test/heroUnion.test.mjs",
         "i18n_init": "node test/i18n.test.mjs init",
-        "i18n_build": "node test/i18n.test.mjs build"
+        "i18n_build": "node test/i18n.test.mjs build && cp public/en-us/index.html public/index.html"
     }
 }
