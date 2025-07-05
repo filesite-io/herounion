@@ -26,5 +26,9 @@
 
     "tokens": {
         "herounion_demo": "hello#world!"
+    },
+
+    "templateConfigs": {
+        "GTAG_ID": "G-DZRYEJF89T"
     }
 }

@@ -18,9 +18,10 @@ let initTest = async function(t) {
 };
 
 let buildTest = async function(t) {
-    const i18n = new I18N();
-
     let lang = process.argv[3];
+    let configFilename = process.argv[4];
+    if (!configFilename) {configFilename = 'config.json';}
+    const i18n = new I18N(configFilename);
     const res = await i18n.build(lang);
 
     assert.ok(res);

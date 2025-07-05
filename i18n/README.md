@@ -44,7 +44,7 @@ npm run i18n_init
 ### 使用语言包生成html文件
 
 ```
-npm run i18n_build [语言代号]
+npm run i18n_build [语言代号] [config文件名]
 ```
 
 如果不传参数“语言代号”，则生成i18n/目录下的所有已配置语言对应的html文件。

@@ -133,10 +133,7 @@
         </span>
     </div>
 
-    <h4 class="mt-d5">JSON数据</h4>
-    <pre><code id="herounion_stats">...</code></pre>
-
-    <h3 class="mt-2">联盟盟约</h3>
+    <h3 class="mt-2">盟约</h3>
     <p class="mt-1">为了您自己和整个社会更美好的明天，请遵守以下约定并坚持下去！</p>
     <ul class="mt-d5">
         <li>遵守当地/国家法律法规</li>
@@ -146,9 +143,6 @@
         <li>目标网站的商业核心数据将不会被抓取</li>
         <li>低并发、低频率，不影响目标网站的正常运行</li>
     </ul>
-
-    <h3 class="mt-2">机器人</h3>
-    <dl class="mt-d5" id="herobots">...</dl>
 
     <h3 class="mt-2">HeroUnion App</h3>
     <ul class="mt-d5">
@@ -170,6 +164,8 @@
     <h3 class="mt-2">HeroBot下载</h3>
     <p><a href="https://github.com/filesite-io/machete_hero" target="_blank">https://github.com/filesite-io/machete_hero</a></p>
 
+    <h3 class="mt-2">机器人</h3>
+    <dl class="mt-d5" id="herobots">...</dl>
 
     <footer class="mt-4">
         <p>
@@ -253,7 +249,7 @@
                 method: 'GET',
                 dataType: 'json'
             }).done(function(data) {
-                $('#herounion_stats').text(JSON.stringify(data, null, 4));
+                //$('#herounion_stats').text(JSON.stringify(data, null, 4));
                 $('.run_time').text( formatSeconds(data.run_seconds) );
                 $('.cache_time').text( formatSeconds(data.cache_time) );
                 renderStats('taskStatus', data.taskStatus);
@@ -280,5 +276,15 @@
 
         setInterval(loadUnionStats, 20000);
     </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZRYEJF89T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZRYEJF89T');
+</script>
 </body>
 </html>

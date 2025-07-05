@@ -133,9 +133,6 @@
         </span>
     </div>
 
-    <h4 class="mt-d5">JSON डेटा</h4>
-    <pre><code id="herounion_stats">...</code></pre>
-
     <h3 class="mt-2">गठबंधन की वाचा</h3>
     <p class="mt-1">कृपया निम्नलिखित परंपराओं का पालन करें और अपने तथा पूरे समाज के बेहतर कल के लिए इसका पालन करें!</p>
     <ul class="mt-d5">
@@ -146,9 +143,6 @@
         <li>लक्ष्य वेबसाइट का वाणिज्यिक कोर डेटा क्रॉल नहीं किया गया है</li>
         <li>कम समवर्तीता, कम आवृत्ति, लक्ष्य वेबसाइट के सामान्य संचालन को प्रभावित नहीं करती है</li>
     </ul>
-
-    <h3 class="mt-2">बॉट</h3>
-    <dl class="mt-d5" id="herobots">...</dl>
 
     <h3 class="mt-2">हीरोयूनियन ऐप</h3>
     <ul class="mt-d5">
@@ -170,6 +164,8 @@
     <h3 class="mt-2">HeroBot डाउनलोड करें</h3>
     <p><a href="https://github.com/filesite-io/machete_hero" target="_blank">https://github.com/filesite-io/machete_hero</a></p>
 
+    <h3 class="mt-2">बॉट</h3>
+    <dl class="mt-d5" id="herobots">...</dl>
 
     <footer class="mt-4">
         <p>
@@ -253,7 +249,7 @@
                 method: 'GET',
                 dataType: 'json'
             }).done(function(data) {
-                $('#herounion_stats').text(JSON.stringify(data, null, 4));
+                //$('#herounion_stats').text(JSON.stringify(data, null, 4));
                 $('.run_time').text( formatSeconds(data.run_seconds) );
                 $('.cache_time').text( formatSeconds(data.cache_time) );
                 renderStats('taskStatus', data.taskStatus);
@@ -280,5 +276,15 @@
 
         setInterval(loadUnionStats, 20000);
     </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZRYEJF89T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZRYEJF89T');
+</script>
 </body>
 </html>
